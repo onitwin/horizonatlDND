@@ -3,11 +3,12 @@
   display:flex;
   background:silver;
   padding:4px;
-  min-width: 500px;
-  height: 70px;
+  min-width: 100px;
+  height: 100px;
   margin:5px;
   border: 1pt solid blue;
-  /* animation: mychange 1s infinite; */
+  overflow: scroll;
+  /* animation: mychange 5s infinite; */
 
 }
 
@@ -17,12 +18,13 @@
 
 .dragbox{
   user-select: none;
-  background:grey;
-  color:white;
-  padding:8px;
-  margin:0 0 0 5px;
   height: 50px;
-  width:50px;
-  border-radius: 50%;
-  border: 1pt solid red;
+  min-width:100px;
+
+}
+
+header{
+  height:8vh;
+  background:blue;
+  border:7pt groove red;
 }
