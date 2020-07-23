@@ -4,14 +4,14 @@ import uuid from 'react-uuid'
 import "nes.css/css/nes.min.css";
 
 const tiles=[
-  {id:uuid(),name:'Wren',color:'red',class:"./wizard.png"},
-  {id:uuid(),name:'Vaelys',color:'blue',class:"./monk.png"},
-  {id:uuid(),name:'Hedge',color:'pink',class:"./paladin.png"},
-  {id:uuid(),name:'Wanda',color:'red',class:"./sorcerer.png"},
-  {id:uuid(),name:'Evil 1',color:'red',class:"./fighter.png"},
-  {id:uuid(),name:'Evil 2',color:'red',class:"./ranger.png"},
-  {id:uuid(),name:'Evil 3',color:'red',class:"./barbarian.png"},
-  {id:uuid(),name:'Evil 4ha ha ha hah aha hah',color:'red',class:"./warlock.png"}
+  {id:uuid(),name:'Wren',image:"./wizard.png",class:'wizard'},
+  {id:uuid(),name:'Vaelys',image:"./monk.png",class:'monk'},
+  {id:uuid(),name:'Hedge',image:"./paladin.png",class:'paladin'},
+  {id:uuid(),name:'Wanda',image:"./sorcerer.png",class:'sorcerer'},
+  {id:uuid(),name:'Evil 1',image:"./fighter.png",class:'fighter'},
+  {id:uuid(),name:'Evil 2',image:"./ranger.png",class:'ranger'},
+  {id:uuid(),name:'Evil 3',image:"./barbarian.png",class:'barbarian'},
+  {id:uuid(),name:'Evil 4',image:"./warlock.png",class:'warlock'}
 
 ]
 
@@ -79,9 +79,9 @@ const InitTracker=() =>{
                     ...provided.draggableProps.style
                     }}
                     >
-                    <div style={{textAlign:'center',background:'red', border:'1px solid blue'}}>
-                      <img style={{width:'50px',height:'50px'}} src={item.class}/>
-                    <p>{item.name}</p>
+                    <div className={item.class} style={{textAlign:'center', border:'1px solid black'}}>
+                      <img style={{width:'50px',height:'50px'}} src={item.image}/>
+                    <p style={{overflow:'scroll'}}>{item.name}</p>
                     </div>
                     </div>
                   )

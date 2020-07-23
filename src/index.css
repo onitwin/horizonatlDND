@@ -1,13 +1,15 @@
 .dropzone{
-  align-items: center;
+  text-align: center;
   display:flex;
   background:silver;
-  padding:4px;
-  min-width: 100px;
-  height: 100px;
+  min-width: 400px;
+  height: 105px;
   margin:5px;
-  border: 1pt solid blue;
+  padding-right: 8px;
+  /* border: 1pt solid red; */
   overflow: scroll;
+  box-shadow: inset -4px -4px  grey;
+
   /* animation: mychange 5s infinite; */
 
 }
@@ -19,12 +21,62 @@
 .dragbox{
   user-select: none;
   height: 50px;
-  min-width:100px;
+  min-width:110px;
+  padding-top: 3px;
+  padding-left: 3px;
 
 }
 
-header{
-  height:8vh;
-  background:blue;
-  border:7pt groove red;
+
+
+.paladin{
+  background-color: white;
+  box-shadow: inset -4px -4px  #bfb9b9;
+
+
+}
+
+.wizard{
+  background-color: #ff6347;
+  box-shadow: inset -4px -4px  #9c1d06;
+}
+
+.monk{
+  background-color: #ffa500;
+  box-shadow: inset -4px -4px  #a76d03;
+}
+
+.barbarian{
+  background-color: red;
+    box-shadow: inset -4px -4px #a50404;
+}
+
+.sorcerer{
+  background-color: violet;
+  box-shadow: inset -4px -4px  #cc5fcc;
+}
+
+.warlock{
+  background-color: purple;
+  box-shadow: inset -4px -4px #520252;
+}
+
+.fighter{
+  background-color: brown;
+  box-shadow: inset -4px -4px  #731515;
+}
+
+.ranger{
+  background-color: green;
+  box-shadow: inset -4px -4px  #035003;
+}
+
+.bard{
+  background-color: #ff5478;
+  box-shadow: inset -4px -4px #c5415d;
+
+}
+
+img{
+  padding-top: 4px;
 }
