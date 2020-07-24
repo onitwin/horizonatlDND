@@ -1,27 +1,39 @@
+body{
+  background-color: #536ada
+}
+
+.headerDiv{
+  background-image: url("horizon.png");
+  border-bottom: 2px solid black;
+  box-shadow:4px 4px  grey;
+  margin-bottom: 5vh;
+  text-align:center;
+}
+
+h1{
+  color:red;
+  text-shadow: -4px -4px  #883333;
+
+}
+
 .dropzone{
   text-align: center;
   display:flex;
   background:silver;
-  min-width: 400px;
+  min-width: 50vh;
+  max-width: 80vh;
   height: 105px;
   margin:5px;
   padding-right: 8px;
-  /* border: 1pt solid red; */
   overflow: scroll;
   box-shadow: inset -4px -4px  grey;
 
-  /* animation: mychange 5s infinite; */
-
 }
-
-/* @keyframes mychange{
-  50% {background: red bottom right/50px 50px;}
-} */
 
 .dragbox{
   user-select: none;
   height: 50px;
-  min-width:110px;
+  min-width:10vh;
   padding-top: 3px;
   padding-left: 3px;
 
@@ -79,4 +91,16 @@
 
 img{
   padding-top: 4px;
+}
+
+
+.myModal{
+  text-align:center;
+  width:500px;
+  height:950px;
+  background-color: white;
+  box-shadow: inset -4px -4px  #bfb9b9;
+  border-left: solid 1px black;
+  border-top: solid 1px black;
+  margin-left:40%;
 }

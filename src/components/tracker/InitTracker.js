@@ -8,10 +8,15 @@ const tiles=[
   {id:uuid(),name:'Vaelys',image:"./monk.png",class:'monk'},
   {id:uuid(),name:'Hedge',image:"./paladin.png",class:'paladin'},
   {id:uuid(),name:'Wanda',image:"./sorcerer.png",class:'sorcerer'},
-  {id:uuid(),name:'Evil 1',image:"./fighter.png",class:'fighter'},
-  {id:uuid(),name:'Evil 2',image:"./ranger.png",class:'ranger'},
-  {id:uuid(),name:'Evil 3',image:"./barbarian.png",class:'barbarian'},
-  {id:uuid(),name:'Evil 4',image:"./warlock.png",class:'warlock'}
+  {id:uuid(),name:'Evil',image:"./fighter.png",class:'fighter'},
+  {id:uuid(),name:'Evil',image:"./ranger.png",class:'ranger'},
+  {id:uuid(),name:'Evil',image:"./barbarian.png",class:'barbarian'},
+  {id:uuid(),name:'Evil',image:"./warlock.png",class:'warlock'},
+  {id:uuid(),name:'Evil',image:"./fighter.png",class:'fighter'},
+  {id:uuid(),name:'Evil',image:"./ranger.png",class:'ranger'},
+  {id:uuid(),name:'Evil',image:"./barbarian.png",class:'barbarian'},
+  {id:uuid(),name:'Evil',image:"./warlock.png",class:'warlock'},
+
 
 ]
 
@@ -43,17 +48,15 @@ const onDragEnd=(result,columns,setColumns)=>{
 
 
 
+
 const InitTracker=() =>{
   const [columns,setColumns]=useState(listOfColumns);
 
   return (
-    <div style={{
-    display:'flex',
-    justifyContent:'center',
-    height:'100%'}}>
-    <button type="button" class="nes-btn is-primary" style={{backgroundColor:'white',color:'black'}}>These buttons</button>
-    <button type="button" class="nes-btn is-warning">do nothing</button>
 
+    <div style={{textAlign:'center',border:'1px solid black',}}>
+    <p  className="nes-text is-primary" style={{ display:'block',textAlign:'center'}}>Initiative/Order of March</p>
+    <div style={{ display:'inline-block',textAlign:'center'}}>
 
     <DragDropContext onDragEnd={result=>onDragEnd(result,columns,setColumns)}>
     {Object.entries(columns).map(([id,column])=>{
@@ -62,7 +65,7 @@ const InitTracker=() =>{
         {(provided,snapshot)=>{
           return (
             <div
-            className="dropzone"
+            className="dropzone "
             {...provided.droppableProps}
             ref={provided.innerRef}
             >
@@ -80,10 +83,11 @@ const InitTracker=() =>{
                     }}
                     >
                     <div className={item.class} style={{textAlign:'center', border:'1px solid black'}}>
-                      <img style={{width:'50px',height:'50px'}} src={item.image}/>
+                      <img style={{width:'50px',height:'50px'}} src={item.image} alt={item.class}/>
                     <p style={{overflow:'scroll'}}>{item.name}</p>
                     </div>
                     </div>
+
                   )
                 }}
                 </Draggable>
@@ -91,6 +95,7 @@ const InitTracker=() =>{
             })}
             {provided.placeholder}
             </div>
+
           )
         }}
         </Droppable>
@@ -99,6 +104,8 @@ const InitTracker=() =>{
 
     </DragDropContext>
     </div>
+    </div>
+
   )
 }
 

@@ -4,9 +4,9 @@ import React from 'react';
 const MyHeader=() =>{
 
   return(
-    <div>
+    <div className="headerDiv" style={{width:'100%'}}>
   <header>
-  <h1 style={{display:'inline-flex',fontSize:'50pt'}}>8-Bit Adventurer</h1><h3 style={{display:'inline-flex',marginLeft:'50px'}}>-DMs Toolbox</h3>
+  <h1 style={{fontSize:'50pt'}}>8-Bit Adventurer</h1>
   </header>
   </div>
   )
