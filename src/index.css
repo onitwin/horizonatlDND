@@ -1,5 +1,5 @@
 body{
-  background-color: #536ada
+  background-color: black;
 }
 
 .headerDiv{
@@ -33,7 +33,7 @@ h1{
 .dragbox{
   user-select: none;
   height: 50px;
-  min-width:10vh;
+  min-width:15vh;
   padding-top: 3px;
   padding-left: 3px;
 
