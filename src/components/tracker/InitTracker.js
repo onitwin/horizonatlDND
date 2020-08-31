@@ -4,10 +4,6 @@ import uuid from 'react-uuid'
 import "nes.css/css/nes.min.css";
 
 
-
-
-
-
 // this is code for a single column
 // const onDragEnd=(result,columns,setColumns)=>{
 //   if(!result.destination) return;
@@ -94,22 +90,6 @@ const InitTracker=(props) =>{
 
 
 
-
-
-
-
-
-
-
-
-  if (!props.characters){
-    return (
-      <div><h3>Add your first character</h3></div>
-    )
-  }else{
-
-
-
   return (
 
     <div style={{textAlign:'center',border:'1px solid black',}}>
@@ -167,7 +147,7 @@ const InitTracker=(props) =>{
     </div>
 
   )
-}
+
 }
 
 export default InitTracker;

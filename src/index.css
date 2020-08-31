@@ -104,3 +104,11 @@ img{
   border-top: solid 1px black;
   margin-left:40%;
 }
+
+
+.navlink{
+  text-align: center;
+  list-style: none;
+  display: inline-flex;
+  margin-left: 30vh;
+}
