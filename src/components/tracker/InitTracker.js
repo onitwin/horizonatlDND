@@ -31,6 +31,10 @@ import "nes.css/css/nes.min.css";
 
 const InitTracker=(props) =>{
 
+
+
+
+
   const [tiles,setTiles]=useState([
     {id:uuid(),name:'Wren',image:"./wizard.png",class:'wizard'}, //dummy data
     {id:uuid(),name:'Vaelys',image:"./monk.png",class:'monk'},
@@ -46,6 +50,15 @@ const InitTracker=(props) =>{
     {id:uuid(),name:'Evil',image:"./warlock.png",class:'warlock'},
 
   ])
+
+  // useEffect(()=>{
+  //   if(props.characters){
+  //   setTiles(props.characters)
+  // }
+  // },[props.characters])
+
+
+
 
   const listOfColumns={
     [uuid()]:{
@@ -88,6 +101,12 @@ const InitTracker=(props) =>{
 
 
 
+
+  if (!props.characters){
+    return (
+      <div><h3>Add your first character</h3></div>
+    )
+  }else{
 
 
 
@@ -148,6 +167,7 @@ const InitTracker=(props) =>{
     </div>
 
   )
+}
 }
 
 export default InitTracker;
