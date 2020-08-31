@@ -6,7 +6,7 @@ const CustomMap=() =>{
 
 
 return(
-  <p>Hello From the map component</p>
+  <h1>Hello From the map component</h1>
 )
 
 

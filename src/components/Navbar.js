@@ -1,14 +1,14 @@
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import "nes.css/css/nes.min.css";
 
 const Navbar=() =>{
 
-
+//links rendered using buttons due to stylesheet requirments/personal taste
 return(
   <ul className="navbarContainer">
-  <li className="navlink"><button className="nes-btn is-failure"><a href="/">Homepage</a></button></li>
-  <li className="navlink"><button className="nes-btn is-failure"><a href="/maps">Cartographer</a></button></li>
-  <li className="navlink"><button className="nes-btn is-failure"><a href="generators">Random Generators</a></button></li>
+  <li className="navlink"><a href="/"><button className="nes-btn is-failure">Homepage</button></a></li>
+  <li className="navlink"><a href="/maps"><button className="nes-btn is-failure">Cartographer</button></a></li>
+  <li className="navlink"><a href="generators"><button className="nes-btn is-failure">Random Generators</button></a></li>
 
   </ul>
 )

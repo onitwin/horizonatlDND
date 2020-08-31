@@ -4,35 +4,14 @@ import uuid from 'react-uuid'
 import "nes.css/css/nes.min.css";
 
 
-// this is code for a single column
-// const onDragEnd=(result,columns,setColumns)=>{
-//   if(!result.destination) return;
-//
-//   const {source,destination}=result;
-//   const column =columns[source.droppableId];
-//   const copiedItems=[...column.items];
-//   const [removed]=copiedItems.splice(source.index,1);
-//   copiedItems.splice(destination.index,0,removed);
-//   setColumns({
-//     ...columns,[source.droppableId]:{
-//       ...column,
-//       items:copiedItems
-//     }
-//   })
-// };
-
-
-
-
-
 const InitTracker=(props) =>{
 
 
 
 
-
+  //dummy data included in state belowe- to be replaced with data from character props
   const [tiles,setTiles]=useState([
-    {id:uuid(),name:'Wren',image:"./wizard.png",class:'wizard'}, //dummy data
+    {id:uuid(),name:'Wren',image:"./wizard.png",class:'wizard'},
     {id:uuid(),name:'Vaelys',image:"./monk.png",class:'monk'},
     {id:uuid(),name:'Hedge',image:"./paladin.png",class:'paladin'},
     {id:uuid(),name:'Wanda',image:"./sorcerer.png",class:'sorcerer'},

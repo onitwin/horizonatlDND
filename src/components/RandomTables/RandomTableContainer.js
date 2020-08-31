@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,Fragment} from 'react';
 import "nes.css/css/nes.min.css";
 import RandomMagicItems from './RandomMagicItems'
 import RandomWeatherGenerator from './RandomWeatherGenerator'
@@ -10,7 +10,12 @@ const RandomTableContainer=() =>{
 
 
 return(
+  <Fragment>
   <h1>Random Tables</h1>
+  <RandomMagicItems/>
+  <RandomNpcGenerator/>
+  <RandomWeatherGenerator/>
+  </Fragment>
 )
 
 
