@@ -7,7 +7,7 @@ const RandomMagicItems=() =>{
 
 
 return(
-  <h1>Random Magic Items</h1>
+  <h1>Random Magic Items- Under Construction</h1>
 )
 
 

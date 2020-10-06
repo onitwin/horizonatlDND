@@ -4,6 +4,8 @@ import uuid from 'react-uuid'
 import "nes.css/css/nes.min.css";
 
 
+
+
 const InitTracker=(props) =>{
 
 
@@ -41,6 +43,8 @@ const InitTracker=(props) =>{
       items:tiles
     }
   }
+
+
 
   const [columns,setColumns]=useState(listOfColumns);
 

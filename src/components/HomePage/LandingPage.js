@@ -116,7 +116,7 @@ const LandingPage=(props) =>{
     </div>
 
     <InitTracker  characters={characters}/>
-    <ProficienciesTable/>
+    <ProficienciesTable characters={characters}/>
     </div>
   )
 

@@ -7,7 +7,7 @@ const RandomNpcGenerator=() =>{
 
 
 return(
-  <h1>Random NPCS</h1>
+  <h1>Random NPCS- Under Construction</h1>
 )
 
 

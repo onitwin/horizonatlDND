@@ -11,7 +11,7 @@ const RandomTableContainer=() =>{
 
 return(
   <Fragment>
-  <h1>Random Tables</h1>
+  <h1>Random Tables- Under Construction</h1>
   <RandomMagicItems/>
   <RandomNpcGenerator/>
   <RandomWeatherGenerator/>
