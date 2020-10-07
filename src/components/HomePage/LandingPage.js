@@ -10,6 +10,9 @@ import uuid from 'react-uuid'
 
 const LandingPage=(props) =>{
 
+//temporarily removed link
+  // <ProficienciesTable characters={characters} proficiencies={proficiencies}/>
+
   const [modalIsOpen,setIsOpen] = React.useState(false);
 
   const [characters,setCharacters]=useState([])
@@ -49,7 +52,7 @@ const LandingPage=(props) =>{
       }
     }
     setCharacters([...characters,newHero])
-    console.log(characters+ "log of characters from the app component")
+    console.log(characters+ "log of characters from the Landing Page component")
     closeModal();
   }
 
@@ -116,7 +119,7 @@ const LandingPage=(props) =>{
     </div>
 
     <InitTracker  characters={characters}/>
-    <ProficienciesTable characters={characters}/>
+
     </div>
   )
 

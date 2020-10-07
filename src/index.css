@@ -112,3 +112,17 @@ img{
   display: inline-flex;
   margin-left: 30vh;
 }
+
+.header-alignment-div{
+  width:20px;
+  margin-right: 20px;
+}
+
+.leaflet-container {
+  width: 84%;
+  height: 1440px;
+}
+
+.mapdiv{
+  text-align: center;
+}
