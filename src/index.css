@@ -1,5 +1,6 @@
 body{
   background-color: black;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
 }
 
 .headerDiv{
@@ -21,12 +22,13 @@ h1{
   display:flex;
   background:silver;
   min-width: 50vh;
-  max-width: 80vh;
+  max-width: 85vw;
   height: 105px;
   margin:5px;
   padding-right: 8px;
   overflow: scroll;
   box-shadow: inset -4px -4px  grey;
+  background-image: linear-gradient(120deg, #66a6ff 0%, #89f7fe 100%);
 
 }
 
@@ -41,60 +43,80 @@ h1{
 
 
 
-.paladin{
-  background-color: white;
-  box-shadow: inset -4px -4px  #bfb9b9;
+.Paladin{
+  background-color: #EBEF1A;
+  box-shadow: inset -4px -4px  #C2C50B;
 
 
 }
 
-.wizard{
+.Wizard{
   background-color: #ff6347;
   box-shadow: inset -4px -4px  #9c1d06;
 }
 
-.monk{
+.Monk{
   background-color: #ffa500;
   box-shadow: inset -4px -4px  #a76d03;
 }
 
-.barbarian{
+.Barbarian{
   background-color: red;
     box-shadow: inset -4px -4px #a50404;
 }
 
-.sorcerer{
+.Sorcerer{
   background-color: violet;
   box-shadow: inset -4px -4px  #cc5fcc;
 }
 
-.warlock{
+.Warlock{
   background-color: purple;
   box-shadow: inset -4px -4px #520252;
 }
 
-.fighter{
+.Fighter{
   background-color: brown;
   box-shadow: inset -4px -4px  #731515;
 }
 
-.ranger{
+.Ranger{
   background-color: green;
   box-shadow: inset -4px -4px  #035003;
 }
 
-.bard{
+.Bard{
   background-color: #ff5478;
   box-shadow: inset -4px -4px #c5415d;
-
 }
+
+.Druid{
+  background-color: #602E2F;
+  box-shadow: inset -4px -4px #3A1B1C;
+}
+
+.Cleric{
+  background-color: #FCFCFC;
+  box-shadow: inset -4px -4px #bfb9b9;
+}
+
+.Enemy{
+  background-color: #4B3E3E;
+  box-shadow: inset -4px -4px #100E0E;
+}
+
 
 img{
   padding-top: 4px;
 }
 
+.modal-div{
+  text-Align:center;
+}
 
 .myModal{
+  margin-top: 10vh;
+  margin-left: 32vw;
   text-align:center;
   width:500px;
   height:550px;
@@ -102,15 +124,21 @@ img{
   box-shadow: inset -4px -4px  #bfb9b9;
   border-left: solid 1px black;
   border-top: solid 1px black;
-  margin-left:40%;
+  overflow: scroll;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
+.navbarContainer{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+}
 
 .navlink{
   text-align: center;
   list-style: none;
   display: inline-flex;
-  margin-left: 30vh;
 }
 
 .header-alignment-div{

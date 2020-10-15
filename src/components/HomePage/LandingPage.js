@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import InitTracker from "../tracker/InitTracker"
 import ProficienciesTable from '../proficiencies/ProficienciesTable'
@@ -6,7 +6,7 @@ import ProficienciesTable from '../proficiencies/ProficienciesTable'
 import Modal from 'react-modal';
 import uuid from 'react-uuid'
 
-
+const LOCAL_STORAGE_KEY="charactersStore"
 
 const LandingPage=(props) =>{
 
@@ -16,6 +16,18 @@ const LandingPage=(props) =>{
   const [modalIsOpen,setIsOpen] = React.useState(false);
 
   const [characters,setCharacters]=useState([])
+  const [enemies,setEnemies]=useState([])
+
+  useEffect(()=>{
+    const charactersFetch=JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if(charactersFetch){
+      setCharacters(charactersFetch);
+    }
+  },[]);
+
+  useEffect(()=>{
+    localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(characters))
+  },[characters])
 
   // character consists of object as follows:
   //   id:"",
@@ -56,7 +68,7 @@ const LandingPage=(props) =>{
     closeModal();
   }
 
-  const classes=[{class:'Barbarian'},{class:'Bard'},{class:'Cleric'},{class:'Druid'},{class:'Fighter'},{class:'Monk'},{class:'Wizard'},{class:'Sorcerer'},{class:'Warlock'},{class:'Ranger'}]
+  const classes=[{class:'Barbarian'},{class:'Bard'},{class:'Cleric'},{class:'Druid'},{class:'Fighter'},{class:'Monk'},{class:'Paladin'},{class:'Wizard'},{class:'Sorcerer'},{class:'Warlock'},{class:'Ranger'}]
 
   const proficiencies=[{name:'Acrobatics'},{name:'Animal Handling'},{name:'Athletics'},{name:'Arcana'},{name:'Deception'},{name:'History'},{name:'Insight'},
   {name:'Intimidation'},{name:'Investigation'},{name:'Medicine'},{name:'Medicine'},{name:'Nature'},{name:'Perception'},{name:'Performance'},{name:'Persuasion'},{name:'Religion'},
@@ -68,7 +80,7 @@ const LandingPage=(props) =>{
 
   const profOptions=proficiencies.map((proficiency)=>{
     return(
-      <div style={{display:'inline-block'}} >
+      <div style={{display:'block'}} >
       <label style={{margin:'8px'}}for={proficiency.name}>{proficiency.name}</label>
       <input id={proficiency.name } name='proficiency' type="checkbox" value={proficiency.name}></input>
       <br/>
@@ -87,7 +99,7 @@ const LandingPage=(props) =>{
   return (
     <div>
 
-    <div>
+    <div className="modal-div">
     <button type="button" className="nes-btn is-success" onClick={openModal}>Add Character</button>
 
     <Modal
@@ -95,7 +107,7 @@ const LandingPage=(props) =>{
     isOpen={modalIsOpen}
     onRequestClose={closeModal}
     >
-    <div style={{textAlign:'left'}}>
+    <div style={{textAlign:'center'}}>
 
     <form onSubmit={handleSubmit}>
     <label style={{margin:'8px'}} for='nameInput'> Name</label>
@@ -103,11 +115,13 @@ const LandingPage=(props) =>{
     <label for='classInput'>Character Class</label>
     <select name='classInput' defaultValue="select-class">
     <option disabled value='select-class'>Select a class</option>
+    <option value='Enemy'>Enemy</option>
     {classOptions}
     </select>
     <div>
     {profOptions}
     </div >
+
     <div style={{textAlign:'center',marginBottom:'1vh'}}>
     <button style={{display:"inline-block"}} className='nes-btn is-success' type="submit">Save</button>
     </div>

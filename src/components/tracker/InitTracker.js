@@ -5,39 +5,28 @@ import "nes.css/css/nes.min.css";
 
 
 
+//destructured props.characters
+const InitTracker=({characters}) =>{
 
-const InitTracker=(props) =>{
+  const [tiles,setTiles]=useState([]) //individual tiles for drag and drop- populate with characters prop
 
+  useEffect(()=>{
+    if(characters){ //if characters prop exists, set tiles as equal to that prop
+    setTiles(characters) //set contents of tiles
+    setColumns({ //set contents of dropzone equal to new tiles value
+      [uuid()]:{
+        name:'Initiative Order',
+        items:characters
+      }
+    })
 
-
-
-  //dummy data included in state belowe- to be replaced with data from character props
-  const [tiles,setTiles]=useState([
-    {id:uuid(),name:'Wren',image:"./wizard.png",class:'wizard'},
-    {id:uuid(),name:'Vaelys',image:"./monk.png",class:'monk'},
-    {id:uuid(),name:'Hedge',image:"./paladin.png",class:'paladin'},
-    {id:uuid(),name:'Wanda',image:"./sorcerer.png",class:'sorcerer'},
-    {id:uuid(),name:'Evil',image:"./fighter.png",class:'fighter'},
-    {id:uuid(),name:'Evil',image:"./ranger.png",class:'ranger'},
-    {id:uuid(),name:'Evil',image:"./barbarian.png",class:'barbarian'},
-    {id:uuid(),name:'Evil',image:"./warlock.png",class:'warlock'},
-    {id:uuid(),name:'Evil',image:"./fighter.png",class:'fighter'},
-    {id:uuid(),name:'Evil',image:"./ranger.png",class:'ranger'},
-    {id:uuid(),name:'Evil',image:"./barbarian.png",class:'barbarian'},
-    {id:uuid(),name:'Evil',image:"./warlock.png",class:'warlock'},
-
-  ])
-
-  // useEffect(()=>{
-  //   if(props.characters){
-  //   setTiles(props.characters)
-  // }
-  // },[props.characters])
+  }
+},[characters]) //update if and when characters prop updates
 
 
 
 
-  const listOfColumns={
+  const listOfColumns={ //dropzone set up
     [uuid()]:{
       name:'Initiative Order',
       items:tiles
@@ -48,15 +37,15 @@ const InitTracker=(props) =>{
 
   const [columns,setColumns]=useState(listOfColumns);
 
-  const onDragEnd=(result,columns,setColumns)=>{
+  const onDragEnd=(result,columns,setColumns)=>{ //onDragEnd function- when item dropped initiate function
     if(!result.destination) return;
 
-    const {source,destination}=result;
-    const column =columns[source.droppableId];
-    const copiedItems=[...column.items];
-    const [removed]=copiedItems.splice(source.index,1);
-    copiedItems.splice(destination.index,0,removed);
-    setColumns({
+    const {source,destination}=result; //obtain source position and destination position
+    const column =columns[source.droppableId]; //column UUID value is equal to source column (in event of multiple columns)
+    const copiedItems=[...column.items];// copied items set equal to result of items from listOfColumns object
+    const [removed]=copiedItems.splice(source.index,1); //splice source item from objecrt
+    copiedItems.splice(destination.index,0,removed); //splice item back in at new position
+    setColumns({ //set coluns as equal to the newly spliced and re-ordered items
       ...columns,[source.droppableId]:{
         ...column,
         items:copiedItems
@@ -66,18 +55,13 @@ const InitTracker=(props) =>{
 
 
 
-  const characters=props.characters.map((player)=>{  //testing prop(prop arrives and contains all details as normal)
-    return <p>{player.name}- {player.class} </p>
-  })
-
-
-
 
   return (
 
-    <div style={{textAlign:'center',border:'1px solid black',}}>
+    <div style={{textAlign:'center'}}>
     <p  className="nes-text is-primary" style={{ display:'block',textAlign:'center'}}>Initiative/Order of March</p>
-    {characters}
+    <p  className="nes-text is-primary" style={{ display:'block',textAlign:'center'}}>Drag and Drop</p>
+
     <div style={{ display:'inline-block',textAlign:'center'}}>
 
 
@@ -106,7 +90,7 @@ const InitTracker=(props) =>{
                     }}
                     >
                     <div className={item.class}  style={{textAlign:'center', border:'1px solid black'}}>
-                      <img style={{width:'50px',height:'50px'}} src={item.image} alt={item.class}/>
+                      <img style={{width:'50px',height:'50px'}} title={item.class} src={item.image} alt={item.class}/>
                     <p style={{overflow:'scroll'}}>{item.name}</p>
                     </div>
                     </div>
