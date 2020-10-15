@@ -36,7 +36,7 @@ const LandingPage=(props) =>{
   //   class:"",
   //   proficienciesHeld:[],
   //   proficienciesNotHeld:[]
-  //will add co-ords when map component is added
+  //will add co-ords when map component is added kk
 
 
   function openModal() {
@@ -45,6 +45,20 @@ const LandingPage=(props) =>{
 
   function closeModal(){
     setIsOpen(false);
+  }
+
+  function deleteCharacter(id){
+    const newCharacterArray=characters
+    console.log("starting array", characters) //checking starting state of characters
+    console.log("new array",newCharacterArray) //checkinhg starting state of characters copy
+    for (let character of newCharacterArray){
+      if(character.id === id){
+        newCharacterArray.splice(character.indexOf,1)
+        setCharacters(newCharacterArray)
+      }
+    }
+    console.log("updated new array",newCharacterArray) //checking end state of characters copy
+    console.log("updated original array",characters)//checking end state of characters
   }
 
   function handleSubmit(event){
@@ -64,7 +78,6 @@ const LandingPage=(props) =>{
       }
     }
     setCharacters([...characters,newHero])
-    console.log(characters+ "log of characters from the Landing Page component")
     closeModal();
   }
 
@@ -132,7 +145,7 @@ const LandingPage=(props) =>{
     </Modal>
     </div>
 
-    <InitTracker  characters={characters}/>
+    <InitTracker  deleteCharacter={deleteCharacter} characters={characters}/>
 
     </div>
   )

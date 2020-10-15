@@ -6,7 +6,7 @@ import "nes.css/css/nes.min.css";
 
 
 //destructured props.characters
-const InitTracker=({characters}) =>{
+const InitTracker=({characters,deleteCharacter}) =>{
 
   const [tiles,setTiles]=useState([]) //individual tiles for drag and drop- populate with characters prop
 
@@ -45,7 +45,7 @@ const InitTracker=({characters}) =>{
     const copiedItems=[...column.items];// copied items set equal to result of items from listOfColumns object
     const [removed]=copiedItems.splice(source.index,1); //splice source item from objecrt
     copiedItems.splice(destination.index,0,removed); //splice item back in at new position
-    setColumns({ //set coluns as equal to the newly spliced and re-ordered items
+    setColumns({ //set columns as equal to the newly spliced and re-ordered items
       ...columns,[source.droppableId]:{
         ...column,
         items:copiedItems
@@ -90,7 +90,9 @@ const InitTracker=({characters}) =>{
                     }}
                     >
                     <div className={item.class}  style={{textAlign:'center', border:'1px solid black'}}>
+                    <button onClick={()=>deleteCharacter(item.id)} className="char-delete-btn">X</button>
                       <img style={{width:'50px',height:'50px'}} title={item.class} src={item.image} alt={item.class}/>
+
                     <p style={{overflow:'scroll'}}>{item.name}</p>
                     </div>
                     </div>
